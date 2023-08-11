@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Peso ideal</title>
+    <style>
+      body {
+    background-color:  rgb(245, 68, 206);
+}
+
+div {
+    text-align:left;
+    padding: 8px;
+    color: rgb(245, 68, 206);
+}
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(41, 37, 37, 0.637);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+
+       
+    </style>
+</head>
+
+<body>
+    
+    <section>
+        <script language="javascript" type="text/javascript">
+            function mostrarSituacao() {
+                var nome = document.getElementById("nome").value;
+                var altura = parseFloat(document.getElementById("altura").value);
+                var idade = parseInt(document.getElementById("idade").value);
+                var peso = parseFloat(document.getElementById("peso").value);
+                var sexo = document.getElementById("sexo").value;
+                var display = document.getElementById("display");
+                var imc = peso / (altura * altura);
+                var res = imc;
+                var mensagem = "";
+
+                if (sexo === "masculino") {
+                    if (res < 16) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está Muito abaixo do peso`;
+                    } else if (res >= 16.0 && res <= 18.4) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está Abaixo do peso`;
+                    } else if (res >= 18.5 && res <= 24.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com o Peso normal`;
+                    } else if (res >= 25.0 && res <= 29.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Sobrepeso`;
+                    } else if (res >= 30.0 && res <= 34.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Obesidade grau I`;
+                    } else if (res >= 35.0 && res <= 39.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Obesidade grau II`;
+                    } else {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Obesidade grau III`;
+                    }
+                } else {
+                    if (res < 16) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está Muito abaixo do peso`;
+                    } else if (res >= 16.0 && res <= 18.4) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está Abaixo do peso`;
+                    } else if (res >= 18.5 && res <= 24.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com o Peso normal`;
+                    } else if (res >= 25.0 && res <= 29.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Sobrepeso`;
+                    } else if (res >= 30.0 && res <= 34.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Obesidade grau I`;
+                    } else if (res >= 35.0 && res <= 39.9) {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Obesidade grau II`;
+                    } else {
+                        mensagem = `${nome}, ${idade} seu IMC é: ${res.toFixed(
+                            2
+                        )}, você está com Obesidade grau III`;
+                    }
+                }
+
+                display.innerHTML = mensagem;
+            }
+        </script>
+        <style>
+            body {
+                background-color: rgb(245, 68, 206);
+            }
+
+            div {
+                text-align: left;
+                padding: 8px;
+                color: rgb(245, 68, 206);
+            }
+
+            section {
+                background-color: white;
+                border-radius: 10px;
+                padding: 15px;
+                width: 500px;
+                margin: auto;
+                box-shadow: 3px 3px 10px rgba(41, 37, 37, 0.637);
+            }
+
+            footer {
+                color: white;
+                text-align: center;
+                font-style: italic;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <center>
+                <img src="./Oeste.png" width="60" height="80">
+            </center>
+            <br />
+            <p>Aluna: Renata carvalho de souza </p>
+           
+            <h1>Prova Pratica 3</h1>
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
+            <br />
+            <br />
+            <label for="sexo">Sexo:</label>
+            <select id="sexo">
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+            </select>
+            <br />
+            <br />
+            <label for="peso">Peso:</label>
+            <input type="number" id="peso">
+            <br />
+            <br />
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade">
+            <br />
+            <br />
+            <label for="altura">Altura:</label>
+            <input type="number" id="altura">
+            <br />
+            <br />
+            <button value="Calcular" onclick="mostrarSituacao()">Calcular</button>
+            <p id="display"></p>
+        </div>
+    </section>
+    </body>
+
+    </html>

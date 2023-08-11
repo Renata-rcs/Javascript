@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-30</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <section>
+    <script language="javascript" type="text/javascript">
+    function calcularSalarioLiquido() {
+        var nome = document.getElementById("nome").value;
+        var idade = Number(document.getElementById("idade").value);
+        var sexo = document.getElementById("sexo").value;
+        var salarioFixo = Number(document.getElementById("salario").value);
+        var display = document.getElementById("display");
+        var salarioLiquido = 0;
+        var abono = 0;
+        var mensagem = "";
+      
+        if (sexo === "masculino") {
+          if (idade >= 30) {
+            abono = 100;
+          } else {
+            abono = 50;
+          }
+        } else if (sexo === "feminino") {
+          if (idade >= 30) {
+            abono = 200;
+          } else {
+            abono = 80;
+          }
+        }
+      
+        salarioLiquido = salarioFixo + abono;
+        mensagem = `Nome: ${nome}<br>Salário Líquido: ${salarioLiquido}`;
+        display.innerHTML = mensagem;
+      }
+    </script>
+
+</head>
+<body>
+
+  <div>
+    <center><img src="./Oeste.png" width="50" height="70"></center>
+    <h4>Nome: Renata Carvalho de Souza</h4>
+   
+    <br/>
+    <h4>Exercício-30</h4>
+    <p>Faça um algoritmo que receba o nome a idade, o sexo e salário fixo de um funcionário. Mostre o nome o salário liquido:<br/></p>
+    <p> Sexo masculino, idade >= 30, abono 100,00 ou idade < 30, abono 50,00<br/></p>
+    <p> Sexo feminino, idade >= 30, abono 200,00 ou idade < 30 abono 80,00<br/></p>
+    <br>
+    Nome:
+    <input type="text" id="nome" name="nome"><br><br>
+    Idade:
+    <input type="number" id="idade" name="idade"><br><br>
+    Sexo:
+    <select id="sexo" name="sexo">
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+    </select><br><br>
+    Salário Fixo:
+    <input type="number" id="salario" name="salario"><br><br>
+    <button onclick="calcularSalarioLiquido()">Calcular Salário Líquido</button>
+    <p id="display"></p>
+  </div>
+  </section>
+  <footer>
+  <p>&copy; Renata_cs</p>
+  </footer>
+  
+  </body>
+  </html>

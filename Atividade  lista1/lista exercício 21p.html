@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 21</title>
+    <script>
+        var totalAptos = 0;
+        var totalNaoAptos = 0;
+        function verificarSituacao() {
+            var nome = document.getElementById("nome").value;
+            var sexo = document.querySelector('input[name="sexo"]:checked').value;
+            var idade = parseInt(document.getElementById("idade").value);    
+            var saude = document.getElementById("saude").value;
+            
+            if (sexo == "M" && idade >= 18 && idade <= 45 && saude == "boa") {
+                totalAptos++;
+                alert(nome + " está apto para o serviço militar obrigatório.");
+
+            }
+            else {
+                totalNaoAptos++;
+                alert(nome + " não está apto(a) para o serviço militar obrigatório.");
+            }
+            document.getElementById("totalAptos").innerHTML = totalAptos;
+            document.getElementById("totalNaoAptos").innerHTML = totalNaoAptos;
+        }
+    </script>
+    <style>
+        body{
+            background-color: pink;
+            color: blanchedalmond;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iesb Oeste</h1>
+    <h4>Nome: Renata Carvalho de Souza</h4>
+    <h4>Turma: OADSNM1AC-RCT00220231</h4>
+    <br/>
+    <h1>Aptidão Serviço Militar</h1>
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required/>
+        <br>
+        <label>Sexo:</label>
+        <input type="radio" id="sexoM" name="sexo" value="M" required/>
+        <label for="sexoM">Masculino</label>
+        <input type="radio" id="sexoF" name="sexo" value="F" required/>
+        <label for="sexoF">Feminino</label>
+        <br/>
+        <label for="idade">Idade</label>
+        <input type="text" id="idade" required/>
+        <br/>
+        <label for="saude">Saúde</label>
+        <select id="saude" required>
+            <option value="boa">Boa</option>
+            <option value="ruim">Ruim</option>
+        </select>
+        <br/>
+        <button type="button" onclick="verificarSituacao()">Verificar Aptidão:</button>
+    </form>
+    <p>Total de pessoas aptas: <span id="totalAptos">0</span></p>
+    <p>Total de pessoas Inaptas: <span id="totalNaoAptos">0</span></p>
+</body>
+</html>

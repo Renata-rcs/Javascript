@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Prova 37_2</title>
+    <section>
+        <script language="javascript" type="text/javascript">
+            function mostrarSituacao(){
+              var nome = document.getElementById("nome").value;
+              var sexo = document.getElementById("sexo").value;
+              var idade = parseInt(document.getElementById("idade").value);
+              var altura = parseFloat(document.getElementById("altura").value);
+              var display = document.getElementById("display");
+              var pesoIdeal = 0;
+              var mensagem = "";
+              switch (sexo){
+                  case "masculino":
+                      if(altura > 1.70){
+                          if (idade <= 20) {
+                              pesoIdeal =  (72.7 * altura) - 58;
+                              
+                          }
+                          else if(idade >= 21 && idade <= 39){
+                              pesoIdeal =  (72.7 * altura) - 53;
+                          }
+                          else if(idade < 40){
+                              pesoIdeal =  (72.7 * altura) - 45;
+                          }
+                      }
+                      break;
+                      case "feminino":
+                          if (altura > 1.50) {
+                              pesoIdeal =  (62.1 * altura) - 47.7;
+                          }
+                          else if(altura <= 1.50){
+                              if(idade >= 35){
+                                  pesoIdeal =  (62.1 * altura) - 45;  
+                              } 
+                              else if (idade < 35) {
+                                  pesoIdeal =  (62.1 * altura) - 49;
+                                  
+                              }
+                              else{
+                                  mensagem = "Sexo invalido";
+                              }
+                          }
+                          break;
+                          if (mensagem === "") {
+                              mensagem = `${nome}, seu peso ideal é ${pesoIdeal.toFixed(2)}`;
+                              
+                          }
+              }
+                    display.innerHTML = mensagem;
+            }
+        </script>
+        <style>
+            body{
+                background-color: pink;
+            }
+            div{
+                text-align: left;
+                padding: 8px;
+                color: pink;
+            }
+            section{
+                background-color: white;
+                border-radius: 10px;
+                padding: 15px;
+                width: 400px;
+                margin: auto;
+                box-shadow: 3px  3px 10px rgba(pink, rgb(59, 1, 33), rgb(241, 6, 124), alpha);
+            }
+        </style>
+</head>
+<body>
+   
+    <div>
+     <h1>Teste Prova usando swicth case</h1>
+     <br/>
+     <br/>
+     <label for="nome">Nome:</label>
+     <input type="text" id="nome">
+     <br/>
+     <br/>
+     <label for="sexo">Sexo:</label>
+     <select id="sexo">
+        <option value="feminino">Feminino</option>
+        <option value="masculino">Masculino</option>
+     </select>
+     <br/>
+     <br/>
+     <label for="idade">Idade:</label>
+     <input type="number" id="idade">
+     <br/>
+     <br/>
+     <label for="altura">Altura:</label>
+     <input type="number" id="altura">
+     <br/>
+     <br/>
+     <button type="button" value="Calcular" onclick="mostrarSituacao()">Calcular</button>
+     <p id="display">Resultado...</p>
+    </div>
+</section>   
+<footer>
+   <center><p>&copy; Renata_cs</p></center>
+    </footer>
+</body>
+</html>

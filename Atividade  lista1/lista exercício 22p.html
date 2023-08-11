@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+    <style>
+        body {
+          background-color: rgb(250, 249, 238);
+          color: palevioletred;
+          font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iesb Oeste</h1>
+    <h4>Nome: Renata Carvalho de Souza</h4>
+    <h4>Turma: OADSNM1AC-RCT00220231</h4>
+    <br/>
+    <h1>Mostrar Situação:</h1>
+    
+    <label for="custo">Custo:</label>
+    <input type="number" id="custo" name="custo"/><br/>
+    <label for="venda">Venda:</label>
+    <input type="number" id="venda" name="venda"/><br/>
+    <button type="button" onclick="calcularLucro()">Calcular</button>
+    <form>
+      <h2>Resultados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Custo</th>
+            <th>Venda</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody id="resultados"></tbody>
+      </table>
+    </form>
+    <h2>Médias</h2>
+    <p>O preço de custo do produto é: <span id="mediaCusto"></span></p>
+    <p>O preço de venda do produto é: <span id="mediaVenda"></span></p>
+    <script>
+
+      let somaCusto = 0;
+      let somaVenda = 0;
+      let produtos = [];
+
+      function calcularLucro() {
+        const custo = Number(document.getElementById("custo").value);
+        const venda = Number(document.getElementById("venda").value);
+
+        const resultado = venda - custo;
+
+        produtos.push({custo, venda, resultado}); 
+
+        somaCusto += custo;
+        somaVenda += venda;
+         
+
+        const tabela = document.getElementById("resultados");
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+          <td>${produtos.length}</td>
+          <td>${custo}</td>
+          <td>${venda}</td>
+          <td>${resultado > 0 ? "Lucro" : resultado < 0 ? "Prejuizo" : "Empate"}</td>
+        `;
+        tabela.appendChild(linha);
+
+        const mediaCusto = somaCusto / produtos.length;
+        const mediaVenda = somaVenda / produtos.length;
+        document.getElementById("mediaCusto").textContent = mediaCusto.toFixed(2);
+        document.getElementById("mediaVenda").textContent = mediaVenda.toFixed(2);
+        
+        document.getElementById("custo").value = "";
+        document.getElementById("venda").value = "";
+      }
+    </script>
+</body>
+</html>

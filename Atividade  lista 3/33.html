@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-33</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <section>
+    <script language="javascript" type="text/javascript">
+    function verificarTriangulo() {
+        var lado1 = Number(document.getElementById("lado1").value);
+        var lado2 = Number(document.getElementById("lado2").value);
+        var lado3 = Number(document.getElementById("lado3").value);
+        var display = document.getElementById("display");
+        var mensagem = "";
+      
+        if (lado1 + lado2 > lado3 && lado2 + lado3 > lado1 && lado3 + lado1 > lado2) {
+          if (lado1 === lado2 && lado2 === lado3) {
+            mensagem = "Triângulo Equilátero";
+          } else if (lado1 === lado2 || lado2 === lado3 || lado3 === lado1) {
+            mensagem = "Triângulo Isósceles";
+          } else if(lado1 != lado2 != lado3  ){
+            mensagem = "Triângulo Escaleno";
+          }
+        } else {
+          mensagem = "Esses valores não podem formar um triângulo";
+        }
+      
+        display.innerHTML = mensagem;
+      }
+    </script>
+   
+</head>
+
+<body>
+
+  <div>
+    <center><img src="./Oeste.png" width="50" height="70"></center>
+    <h4>Nome: Renata Carvalho de Souza</h4>
+   
+    <br/>
+    <h4>Exercício-33</h4>
+    <p>Escrever um algoritmo que leia três valores inteiros e verfique se eles podem ser lados de um triângulo. Se forem, informar qual tipo de triângulo que eles formam: equilátero, isóscele e escaleno. </p><br/>
+    <p><strong>Propiedade:</strong> O comprimento de cada lado de um triângulo é menor que a soma dos comprimetos dos outros dois lados</p><br/>
+    <p><strong>Triângulo Equilátero: </strong> aquele que tem os comprimentos dos três lados iguais;</p><br/>
+    <p><strong>Triângulo isóscele: </strong> aquele que tem os comprimentos de dois lados iguais. Portanto, todo triângulo equilátero é também isóscele;</p><br/>
+    <p><strong>Triângulo Escaleno:</strong> aquele que tem os comprimentos de seus três lados diferentes;</p>
+
+    <h4>Verificar Triângulo</h4>
+    Lado 1:
+    <input type="number" id="lado1" name="lado1"><br><br>
+    Lado 2:
+    <input type="number" id="lado2" name="lado2"><br><br>
+    Lado 3:
+    <input type="number" id="lado3" name="lado3"><br><br>
+    <button onclick="verificarTriangulo()">Verificar</button>
+    <p id="display"></p>
+   
+  </div>
+  </section>
+  <footer>
+  <p>&copy; Renata_cs</p>
+  </footer>
+  
+  </body>
+  </html>
+
+

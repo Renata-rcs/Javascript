@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-37</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <section>
+      <script language="javascript" type="text/javascript">
+        function calcularPesoIdeal() {
+            var nome = document.getElementById("nome").value;
+            var sexo = document.getElementById("sexo").value;
+            var altura = parseFloat(document.getElementById("altura").value);
+            var idade = parseInt(document.getElementById("idade").value);
+            var display = document.getElementById("display");
+            var pesoIdeal = 0;
+            var mensagem = "";
+          
+            if (sexo === "masculino") {
+              if (altura > 1.70) {
+                if (idade <= 20) {
+                  pesoIdeal = 72.7 * altura - 58;
+                } else if (idade >= 21 && idade <= 39) {
+                  pesoIdeal = 72.7 * altura - 53;
+                } else if (idade >= 40) {
+                  pesoIdeal = 72.7 * altura - 45;
+                }
+              } else {
+                if (idade <= 40) {
+                  pesoIdeal = 72.7 * altura - 50;
+                } else {
+                  pesoIdeal = 72.7 * altura - 58;
+                }
+              }
+            } 
+            else if (sexo === "feminino") {
+              if (altura <= 1.50) {
+                if (idade >= 35) {
+                  pesoIdeal = 62.1 * altura - 45;
+                } else if(idade < 35){
+                  pesoIdeal = 62.1 * altura - 49;
+                }
+              } else if(altura > 1.50) {
+                pesoIdeal = 62.1 * altura - 44.7;
+              }
+            } else {
+              mensagem = "Sexo inválido";
+            }
+          
+            if (mensagem === "") {
+              mensagem = `Nome: ${nome}<br>Peso Ideal: ${pesoIdeal.toFixed(2)}`;
+            }
+          
+            display.innerHTML = mensagem;
+          }
+   
+        </script>
+      <body>
+
+        <div>
+          <center><img src="./Oeste.png" width="50" height="70"></center>
+          <h4>Nome: Renata Carvalho de Souza</h4>
+         
+          <br/>
+          <h4>Exercício-37</h4>
+          <p>Faça um algoritmo que leia o nome, o sexo, a altura e a idade de uma pessoa. Calcule e mostre nome e o seu peso ideal de acordo com as seguintes características da pessoa:</p>
+          <p>Sexo Masculino, Altura maior 1.70 Idade menor ou igual 20, peso ideal (72.7*altura) - 58</p>
+          <p>Sexo Masculino, Altura maior 1.70 Idade 21 a 39, peso ideal (72.7*altura) - 53</p>
+          <p>Sexo Masculino, Altura maior 1.70 Idade maior ou igual 40, peso ideal (72.7*altura) - 45</p>
+          <p>Sexo Masculino, Altura menor ou igual 1.70 Idade menor ou igual 40, peso ideal (72.7*altura) - 50</p>
+          <p>Sexo Masculino, Altura menor ou igual 1.70 Idade maior 40, peso ideal (72.7*altura) - 58</p>
+          <p>Sexo Feminino, Altura maior 1.50, Idade ---, peso ideal (62.1*altura) - 44.7</p>
+          <p>Sexo Feminino, Altura menor ou igual 1.50, Idade maior ou igual 35, peso ideal (62.1*altura) - 45</p>
+          <p>Sexo Feminino, Altura menor ou igual 1.50, Idade menor 35, peso ideal (62.1*altura) - 49</p>
+        <form>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" required>
+          <br/>
+          <br/>
+      
+          <label for="sexo">Sexo:</label>
+          <select id="sexo" required>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+          <br/>
+          <br/>
+      
+          <label for="altura">Altura:</label>
+          <input type="number" id="altura" step="0.01" required>
+          <br>
+          <br/>
+      
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" required>
+          <br/>
+          <br/>
+      
+          <button type="button" onclick="calcularPesoIdeal()">Calcular</button>
+        </form>
+        <p id="display"></p>
+         </div>
+        </section>
+        <footer>
+        <p>&copy; Renata_cs</p>
+        </footer>
+        
+        </body>
+        </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+    <style>
+        body{
+            background-color: pink;
+            color: blue;
+            font: normal 20pt Times;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iesb Oeste</h1>
+    <h4>Nome: Renata Carvalho de Souza</h4>
+    <h4>Turma: OADSNM1AC-RCT00220231</h4>
+    <br/>
+   
+        <form>
+            <label for="pessoa">Nome da pessoa:</label>
+            <input type="text" id="pessoa"/>
+            <br/>
+            <label for="sexo">Sexo da pessoa (M/F):</label>
+            <input type="text" id="sexo"/>
+            <br/>
+            <button type="button" onclick="Adicionar()">Adicionar pessoa</button>
+        </form>
+        <h2>Resultados</h2>
+        <p id="totalHomens">Total de homens: 0</p>
+        <p id="totalMulheres">Total de mulheres: 0</p>
+        <ul id="listaPessoas"></ul>
+        <script>
+            var homens = 0;
+            var mulheres = 0;
+            var lista = document.getElementById("listaPessoas");
+            var totalHomens = document.getElementById("totalHomens");
+            var totalMulheres = document.getElementById("totalMulheres");
+            
+            function Adicionar() {
+                var pessoaInput = document.getElementById("pessoa");
+                var sexoInput = document.getElementById("sexo");
+                var nome = pessoaInput.value;
+                var sexo = sexoInput.value.toUpperCase();
+
+                if (sexo === "M") {
+                    lista.innerHTML += "<li>" + nome + " é Homem</li>";
+                        homens++;
+                    totalHomens.innerHTML = "Total de Homens:" + homens;
+                }
+                else if (sexo === "F") {
+                    lista.innerHTML += "<li>" + nome + " é Mulher</li>";
+                        mulheres++;
+                        totalMulheres.innerHTML = "Total de Mulheres:" + mulheres;
+
+                }
+                else{
+                    alert("Sexo invalido");
+
+                }
+                pessoaInput.value= "";
+                sexoInput.value= "";
+                pessoaInput.focus();
+            }
+        </script>
+</body>
+</html>

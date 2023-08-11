@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-29</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <section>
+    <script language="javascript" type="text/javascript">
+    function mostrarSituacao() {
+        var mes = Number(document.getElementById("mes").value);
+        var display = document.getElementById("display");
+        switch (mes) {
+            case 1:
+                display.innerHTML = "Janeiro";
+                break;
+            case 2: 
+                display.innerHTML = "Fevereiro";
+                break;
+            case 3: 
+                display.innerHTML = "Março";
+                break;
+            case 4: 
+                display.innerHTML = "Abril";
+                break;
+            case 5:
+                display.innerHTML = "Maio";
+                break;
+            case 6: 
+                display.innerHTML = "Junho"
+                break;
+            case 7: 
+                display.innerHTML = "Julho";
+                break;
+            case 8: 
+                display.innerHTML = "Agosto";
+                break;
+            case 9: 
+                display.innerHTML = "Setembro";
+                break;
+            case 10: 
+                display.innerHTML = "Outubro";
+                break;
+            case 11: 
+                display.innerHTML = "Novenbro";
+                break;
+            case 12: 
+                display.innerHTML = "Dezembro";
+                    break;
+            default:
+                display.innerHTML = "Não corresponde!";
+                break;
+        }
+        
+    }
+      
+</script>
+</head>
+<body>
+
+    <div>
+      <center><img src="./Oeste.png" width="50" height="70"></center>
+      <h4>Nome: Renata Carvalho de Souza</h4>
+      
+      <br/>
+      <h4>Exercício-29</h4>
+        <p>Faça um algoritimo que receba o número do mês e mostre o mês correspondente. Valide mês inválido.</p>
+        Digite um número: <input type="text" id="mes" size="5"/>
+        <input type="button" value="Mostrar" onclick="mostrarSituacao()"/>
+        <br/><p id="display"><i>Mes</i></p>
+    </div>
+    </section>
+    <footer>
+    <p>&copy; Renata_cs</p>
+    </footer>
+    
+    </body>
+    </html>

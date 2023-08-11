@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-36</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <section>
+    <script language="javascript" type="text/javascript">
+    function calcularConta() {
+        var consumo = parseFloat(document.getElementById("consumo").value);
+        var tipo = document.getElementById("tipo").value;
+        var display = document.getElementById("display");
+        var valorKW = 0;//primeiro o valor do kw/h
+        var valorConta = 0;
+    
+        if (tipo === "residencial") {
+            valorKW = 0.60;
+        } else if (tipo === "comercial") {
+            valorKW = 0.48;
+        } else if (tipo === "industrial") {
+            valorKW = 1.29;
+        } else {
+            display.innerHTML = "Tipo de consumo inválido";
+            return;
+        }
+    
+        valorConta = consumo * valorKW;//por ultimo calcular o valor da conta pra nao dar erro
+    
+        display.innerHTML = "Valor da conta de luz: R$ " + valorConta.toFixed(2);
+    }
+              
+    </script>
+    
+</head>
+
+<body>
+
+    <div>
+      <center><img src="./Oeste.png" width="50" height="70"></center>
+      <h4>Nome: Renata Carvalho de Souza</h4>
+      
+      <br/>
+      <h4>Exercício-36</h4>
+      <p>Faça um algoritmo que calcule o valor da conta de luz de uma pessoa. Sabe-se que o cálculo da conta de luz segue a tabela abaixo:</p>
+      <p>Tipos de valor do KW/h</p>
+      <p>Residencial: 0,60</p>
+      <p>Comério: 0,48</p>
+      <p>Industria: 1,29</p><br/>
+      Digite o consumo em KW/h:
+      <input type="text" id="consumo" name="consumo"><br><br>
+      Selecione o tipo de consumo:
+      <select id="tipo" name="tipo">
+          <option value="residencial">Residencial</option>
+          <option value="comercial">Comercial</option>
+          <option value="industrial">Industrial</option>
+      </select><br><br>
+        <button onclick="calcularConta()">Calcular</button>
+        <p id="display"></p>
+
+    </div>
+    </section>
+    <footer>
+    <p>&copy; Renata_cs</p>
+    </footer>
+    
+    </body>
+    </html>
+  

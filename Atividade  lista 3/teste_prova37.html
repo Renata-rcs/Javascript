@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste_37_1</title>
+    <section>
+    <script language="javascript" type="text/javascript">
+       function mostrarSituacao(){
+          var nome = document.getElementById("nome").value;
+          var altura = parseFloat(document.getElementById("altura").value);
+          var idade = parseInt(document.getElementById("idade").value);
+          var sexo = document.getElementById("sexo").value;
+          var display = document.getElementById("display");
+          var pesoIdeal = 0;
+          var mensagem = "";
+           
+          if(sexo === "masculino"){
+            if (altura > 1.70) {
+              if (idade <= 20) {
+                pesoIdeal = (72.7 * altura) - 58;
+              
+              } else if(idade >= 21 && idade <= 39){
+                pesoIdeal = (72.7 * altura) - 53;
+              } 
+              else if (idade >= 40){
+                pesoIdeal = (72.7 * altura) - 45;
+
+              }
+            }
+            else {
+              if (altura <= 1.70){
+                 if(idade <= 40) {
+                    pesoIdeal = (72.7 * altura) - 50;
+                  } 
+                  else if(idade > 40){
+                    pesoIdeal = (72.7 * altura) - 58;
+                  }
+                }
+              }
+          }
+              else if( sexo === "feminino"){
+                   if(altura > 1.50){
+                      pesoIdeal = (62.1 * altura) - 44.7;
+                    }
+                     else if(altura <=  1.50){
+                      if(idade >= 35){
+                        pesoIdeal = (62.1 * altura) - 45; 
+                      }
+                      else if( idade < 35){
+                        pesoIdeal = (62.1 * altura) - 49;
+                      }
+                    }
+                  }
+                      else {
+                        mensagem = "Sexo invalido"
+                      }
+          
+        if (mensagem === "") {
+              mensagem = `Nome: ${nome}<br>Peso Ideal: ${pesoIdeal.toFixed(2)}`;
+            }
+          
+  
+        display.innerHTML = mensagem;
+      }
+</script>
+<style>
+body {
+    background-color:  rgb(245, 68, 206);
+}
+
+div {
+    text-align:left;
+    padding: 8px;
+    color: rgb(245, 68, 206);
+}
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(41, 37, 37, 0.637);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+</style>
+</head>
+<body>
+  <div>
+  <center><img src="./Oeste.png" width="60" height="80"></center>
+  <br/>
+  <h1>Teste Prova Usando if/else</h1>
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" >
+  <br/>
+  <br/>
+  <label for="sexo">Sexo:</label>
+  <select id="sexo" >
+  <option value="feminino">Feminino</option>
+  <option value="masculino">Masculino</option>
+  </select>
+  <br/>
+  <br/>
+  <label for="idade">Idade:</label>
+  <input type="number" id="idade">
+  <br/>
+  <br/>
+  <label for="altura">Altura:</label>
+  <input type="number" id="altura">
+  <br/>
+  <br/>
+  <button value="Calcular" onclick="mostrarSituacao()">Calcular</button>
+  <p id="display"></p>
+</div>
+</section>
+<footer>
+    <p>&copy; Renata_cs</p>
+</footer>
+</body>
+</html>

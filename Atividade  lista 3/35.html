@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-35</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <section>
+    <script language="javascript" type="text/javascript">
+    function classificarNadador() {
+        var idade = parseInt(document.getElementById("idade").value);
+        var display = document.getElementById("display");
+        var categoria = "";
+    
+        if (idade >= 5 && idade <= 7) {
+            categoria = "Infantil A";
+        } else if (idade >= 8 && idade <= 10) {
+            categoria = "Infantil B";
+        } else if (idade >= 11 && idade <= 13) {
+            categoria = "Juvenil A";
+        } else if (idade >= 14 && idade <= 17) {
+            categoria = "Juvenil B";
+        } else if (idade >= 18 && idade <= 25) {
+            categoria = "Sênior";
+        } else {
+            display.innerHTML = "Categoria não encontrada";
+            return;//return finaliza a execução de uma função e especifica os valores que devem ser retonados para onde a função foi chamada.
+        }
+    
+        display.innerHTML = "Categoria: " + categoria;
+    }
+            
+</script>
+    
+</head>
+
+<body>
+
+    <div>
+      <center><img src="./Oeste.png" width="50" height="70"></center>
+      <h4>Nome: Renata Carvalho de Souza</h4>
+     
+      <br/>
+      <h4>Exercício-35</h4>
+     <p>Elabore um algoritmo que, dada a idade de um nadador. Calssifique-o em uma das seguintes categorias:</p><br/>
+     <p>Infantil A = 5 a 7 anos</p><br/>
+     <p>Infantil B = 8 a 10 anos </p><br/>
+     <p>Juvenil A = 11 a 13 anos</p><br/>
+     <p>Juvenil B = 14 a 17 anos</p><br/>
+     <p>Sênor = 18 a 25 anos</p><br/>
+     <br/>
+    <div>
+        Digite a idade do nadador:
+        <input type="text" id="idade" name="idade"><br><br>
+        <button onclick="classificarNadador()">Classificar</button>
+        <p id="display"></p>
+        
+    </div>
+    </section>
+    <footer>
+    <p>&copy; Renata_cs</p>
+    </footer>
+    
+    </body>
+    </html>
+  

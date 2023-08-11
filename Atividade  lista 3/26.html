@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-26</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <section>
+    <script language="javascript" type="text/javascript">
+        function numeroPorExtenso(numero) {
+    var extenso = '';
+    switch (numero) {
+        case 1:
+            extenso = 'Um';
+            break;
+        case 2:
+            extenso = 'Dois';
+            break;
+        case 3:
+            extenso = 'Três';
+            break;
+        case 4:
+            extenso = 'Quatro';
+            break;
+        case 5:
+            extenso = 'Cinco';
+            break;
+        default:
+            extenso = 'Número não correspondi!';
+            break;
+    }
+    return extenso;
+}
+
+function verificarSituacao() {
+    var n1 = parseInt(document.getElementById("n1").value);
+    var display = document.getElementById("display");
+    var mensagem = "";
+
+    if (n1 >= 1 && n1 <= 5) {
+        mensagem = numeroPorExtenso(n1);
+    } else if (n1 > 5 || n1 < 1) {
+        mensagem = "Número inválido!";
+    } else {
+        mensagem = "Digite um número!";
+    }
+
+    display.innerHTML = mensagem;
+}
+
+    </script>
+   
+  </head>
+  <body>
+   
+      <div>
+        <center><img src="./Oeste.png" width="50" height="70"></center>
+        <h4>Nome: Renata Carvalho de Souza</h4>
+        <h4>Turma: OADSNM1AC-RCT00220231</h4>
+        <br/>
+        <h4>Exercício-26</h4>
+        <h4>Nome: Renata Carvalho de Souza</h4>
+     
+        <br/>
+        <h4>Exercício-26</h4>
+        <p>Faça um algoritmo que leia um número de 1 a 5 e escreva por extenso.<br/> Caso o usuário digite um número que não esteja neste intervalo, exibir mensagem: número inválido.</p>
+        Digite um número:
+        <input type="text" id="n1" name="n1"/><br/><br/>
+        <input type="button" value="verificar" onclick="verificarSituacao()"/>
+        <p id="display"><i>Situação</i></p>
+    
+      </div>
+    </section>
+  <footer>
+      <p>&copy; Renata_cs</p>
+  </footer>
+     
+  </body>
+  </html>

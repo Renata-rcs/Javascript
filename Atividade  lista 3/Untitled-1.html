@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste 37-3</title>
+       
+        <style>
+            body{
+                background-color: red;
+            }
+            div{
+                text-align: left;
+                padding: 8px;
+                color: red;
+                
+            }
+            section{
+                background-color: white;
+                font: Arial 18px;
+                width: 500px;
+                border-radius: 10px;
+                padding: 15px;
+                margin: auto;
+                box-shadow: 3px 3px 10px rgb(0, 0, 0);
+            }
+            footer{
+               color: white;
+               text-align: center;
+               font-style: italic;
+    
+            }
+        </style>
+     
+</head>
+<body>
+    <section>
+    <div>
+        <img src="Oeste.png" alt="logo IESB" width="40" height="50">
+        <br/>
+        <br/>
+        <h1>Exercício-37</h1>
+        <br/>
+        <br/>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome">
+        <br/>
+        <br/>
+        <label for="sexo">Sexo:</label>
+        <select id="sexo">
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+        </select>
+        <br/>
+        <br/>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade">
+        <br/>
+        <br/>
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura">
+        <br/>
+        <br/>
+        <button value="calcular" onclick="mostrarSituacao()">Calcular</button>
+        <p id="display"><i></i></p>
+    </div>
+</section>
+<footer>
+    <p>&copy; Renata_cs</p>
+    </footer>
+    <script language="javascript" type="text/javascript">
+        function mostrarSituacao(){
+           var nome = document.getElementById("nome").value;
+           var sexo = document.getElementById("sexo").value;
+           var altura = parseFloat(document.getElementById("altura").value);
+           var idade = parseInt(document.getElementById("idade").value);
+           var display = document.getElementById("display");
+           var pesoIdeal = 0;
+           var mensagem = "";
+
+           if(sexo === "masculino"){
+               if(altura > 1.70){
+                   if(idade <= 20){
+                       pesoIdeal = (72.7 * altura)-58
+                   }
+               
+                   else if(idade >= 21 && idade <= 39){
+                       pesoIdeal = (72.7 * altura)-53
+                   }
+                   else if(idade >= 40){
+                       pesoIdeal = (72.7 * altura)-45
+                   }
+                  }
+                   else{
+                   if(altura <= 1.70){
+                       if(idade > 40){
+                           pesoIdeal = (72.7 * altura)-58
+                       }
+                       else if(idade <= 40){
+                           pesoIdeal = (72.7 * altura)-45
+                       }
+                   }
+                }  
+               
+                 }
+                 else if(sexo === "feminino"){
+                   if(altura > 1.50){
+                       pesoIdeal = (62.1 * altura)-44.7
+                   }
+                   else if(altura <= 1.50){
+                       if(idade >= 35){
+                       pesoIdeal = (62.1 * altura)-45  
+                       }
+                       else if(idade < 35){
+                           pesoIdeal = (62.1 * altura)-49
+                       }
+                   }
+               }
+               else{
+                   mensagem = "Sexo invalido"
+               }
+               if(mensagem === ""){
+                 mensagem = `${nome}, seu peso ideal é ${pesoIdeal.toFixed(2)}.`
+               }
+            
+           
+           display.innerHTML = mensagem
+        }
+
+
+       </script>
+</body>
+</html>
