@@ -1,0 +1,49 @@
+*{/*Seletor universal que seleciona todos os elementos da página.*/
+    margin: 0;/* Define a margem externa de todos os elementos como 0.*/
+    padding: 0;/* Define o preenchimento interno de todos os elementos como 0.*/
+}
+body{
+    background-image: linear-gradient(rgb(209, 180, 247), rgb(34, 9, 90));
+    height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.calculadora {
+   position: absolute;/* Define a posição absoluta para o elemento com a classe */
+   background-color: rgb(0,0,0,0.8);
+   top: 50%;/* Define a posição vertical do topo como 50% da altura do contêiner pai.*/
+   left: 50%;/* Define a posição horizontal da esquerda como 50% da largura do contêiner pai.*/
+   transform: translate(-50%,-50%);/*: Centraliza o elemento horizontalmente e verticalmente usando translate e porcentagens negativas.é um tipo de transformação que altera a posição de um elemento no plano 2D ou 3D. O valor (-50%, -50%) indica que o elemento será deslocado 50% de sua própria largura para a esquerda e 50% de sua própria altura para cima em relação à sua posição original.*/
+   border-radius: 15px;/* Define o raio das bordas do elemento como 15 pixels.Ao definir um valor para a propriedade border-radius, os cantos do elemento serão arredondados de acordo com esse valor. Quanto maior o valor do raio, mais arredondado será o canto do elemento. Se um valor de border-radius for maior que a metade da dimensão do lado correspondente do elemento, o canto será arredondado até a metade da dimensão do lado.*/
+   padding: 15px;/* Define o preenchimento interno do elemento como 15 pixels.A propriedade CSS padding é usada para definir o espaçamento interno de um elemento. Ela controla o espaço entre o conteúdo de um elemento e suas bordas.*/
+}
+
+.botao{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;/*Define o tamanho da fonte do botão como 25 pixels.*/
+    cursor: pointer;/* Define o cursor do mouse como um ponteiro quando estiver sobre o botão.*/
+    margin: 3px;/* Define uma margem externa de 3 pixels para o botão.*/
+    background-color: rgb(30, 30, 30);
+    border: none;/* Remove a borda do botão.*/
+    color: white;
+}
+.botao:hover{
+    background-color: black;/*: Define a cor de fundo como preto quando o mouse está sobre o botão.*/
+}
+#resultado{
+    width: 207px;/* Define a largura do elemento "resultado" como 207 pixels.*/
+    background-color: white;
+    height: 30px;
+    margin: 5px;
+    color: black;
+    text-align: right;/* Alinha o texto do elemento "resultado" à direita.*/
+    padding: 5px;/*Define um espaçamento interno de 5 pixels dentro do elemento "resultado".*/
+}
+.titulo{
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
